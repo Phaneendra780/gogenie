@@ -159,25 +159,3 @@ User: "Book a flight"
 
 ---
 
-## Schema
-
-```sql
--- customers
-customer_id TEXT PRIMARY KEY,
-name        TEXT NOT NULL,
-email       TEXT NOT NULL UNIQUE,
-phone       TEXT NOT NULL,
-created_at  TEXT
-
--- bookings
-id              TEXT PRIMARY KEY,       -- GG-XXXXXX
-customer_id     TEXT (FK → customers),
-booking_type    TEXT,                   -- Flight / Train / Bus
-from_city       TEXT,
-to_city         TEXT,
-date            TEXT,
-time            TEXT,
-selected_option TEXT,
-status          TEXT DEFAULT 'confirmed',
-created_at      TEXT
-```
